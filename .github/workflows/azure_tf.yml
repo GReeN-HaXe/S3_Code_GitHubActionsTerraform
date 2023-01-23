@@ -11,20 +11,20 @@ on:
 
 env:
   # Login for azure cli
-  ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-  ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+  ARM_CLIENT_ID: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_CLIENT_SECRET }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_CREDENTIALS.AZURE_SUBSCRIPTION_ID }}
+  ARM_TENANT_ID: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_TENANT_ID }}
 
   # Terraform variables
-  TF_VAR_client_id: ${{ secrets.AZURE_AD_CLIENT_ID }}
-  TF_VAR_client_secret: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-  TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  TF_VAR_tenant_id: ${{ secrets.AZURE_AD_TENANT_ID }}
-  TF_VAR_rg_name: ${{ secrets.RG }}
-  TF_VAR_web_app_name: ${{ secrets.WEBAPP }}
-  TF_VAR_app_service_plan_name: ${{ secrets.ASP }}
-  TF_VAR_location: ${{ secrets.LOC }}
+  TF_VAR_client_id: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_CLIENT_ID }}
+  TF_VAR_client_secret: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_CLIENT_SECRET }}
+  TF_VAR_subscription_id: ${{ secrets.AZURE_CREDENTIALS.AZURE_SUBSCRIPTION_ID }}
+  TF_VAR_tenant_id: ${{ secrets.AZURE_CREDENTIALS.AZURE_AD_TENANT_ID }}
+  TF_VAR_rg_name: ${{ secrets.AZURE_CREDENTIALS.RG }}
+  TF_VAR_web_app_name: ${{ secrets.AZURE_CREDENTIALS.WEBAPP }}
+  TF_VAR_app_service_plan_name: ${{ secrets.AZURE_CREDENTIALS.ASP }}
+  TF_VAR_location: ${{ secrets.AZURE_CREDENTIALS.LOC }}
 
 jobs:
   terraformprepare:
