@@ -75,19 +75,14 @@ resource "null_resource" "link_monitoring" {
     EOT
     environment = {
       // Parameters needed to login
-      con_client_id     = var.ARM_CLIENT_ID 
-      # var.client_id 
-      con_client_secret = var.ARM_CLIENT_SECRET
-      # var.client_secret
-      con_tenant_id     = var.ARM_TENANT_ID
-      # var.tenant_id
+      con_client_id     = var.client_id 
+      con_client_secret = var.client_secret
+      con_tenant_id     = var.tenant_id
       // Parameters needed for linking
-      inst_key          = azurerm_application_insights.appi.instrumentation_key
-      conn_str          = azurerm_application_insights.appi.connection_string      
-      rg_name           = var.resource_group_name
-      # var.rg_name
-      web_app_name      = var.TF_VAR_web_app_name
-      # var.web_app_name
+      inst_key     = azurerm_application_insights.appi.instrumentation_key
+      conn_str     = azurerm_application_insights.appi.connection_string      
+      rg_name      = var.rg_name
+      web_app_name = var.web_app_name
     }
   }
 }
